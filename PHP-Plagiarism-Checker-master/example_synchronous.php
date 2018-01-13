@@ -61,7 +61,7 @@ try{
 	// $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
 	//$process = $clCloud->createByFile(filePath, $additionalHeaders);
 	$processes = $clCloud->createByFiles(array("1.docx",
-											     "2.odt"),
+											     "2.docx"),
 										 $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
 															  //						 the second([1]) is the error happend
 	//$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
@@ -143,7 +143,8 @@ function build_table($array){
 }
 
 //print process list as HTML table
-if(isset($plist,$plist['response']) && count($plist['response'])>0)
+if(isset($plist,$plist['response']) && count($plist['response'])>0){
+	echo "abcd";
 	echo build_table($plist['response']);
-
+}
 ?>
