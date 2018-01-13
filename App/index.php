@@ -11,8 +11,11 @@ function redirect($url,$permanent=false)
 }
 if(isset($_POST["Username"]))
 {
-
   redirect('UserHome.html');
+}
+else
+{
+  echo "hello i am here";
 }
 ?>
 <!DOCTYPE html>

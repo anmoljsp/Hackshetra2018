@@ -44,7 +44,7 @@ function redirect($url,$permanent=false)
 	      // 		$res3=mysqli_fetch_assoc($res3);
 	      		// $Std_Id=$res3["S.No."];
 	      		$Std_Id='16';
-		    	$query4="INSERT INTO `Solutions`(`Class_Id`, `Subject_Code`,`AssId` `Std_Id`,`Sol_Link`) VALUES ('$class','$subject','$assId','$Std_Id','$solution')";
+		    	$query4="INSERT INTO `Solutions`(Class_Id, Subject_Code,Ass_Id,Std_Id,Sol_Links) VALUES ('$class','$subject','$assId','$Std_Id','$solution')";
 		    	$res4=mysqli_query($db,$query4);
 		    	if($res4)
 		    	{
