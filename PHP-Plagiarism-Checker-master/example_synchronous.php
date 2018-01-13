@@ -87,7 +87,7 @@ try{
     //foreach ($results as $result) {
     //    echo $result;
     //}
-     $results[$cou];
+    echo $results[$cou];
     //echo $results[$cou][0];
     //echo $results[$cou][1];
     //echo $results[$cou]['Percents'];
