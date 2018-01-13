@@ -65,7 +65,7 @@ try{
 										 $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
 															  //						 the second([1]) is the error happend
 	//$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
-	$process= $processes[0];
+	$process= $processes[0][0];
 	echo "<BR/><strong>Process created!</strong> (PID = '" . $process->processId . "')";
 
 	echo '<BR/><BR/><strong>Processing Started</strong>';
