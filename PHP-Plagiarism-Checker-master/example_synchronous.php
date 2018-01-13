@@ -45,17 +45,17 @@ if(!isset($clCloud->loginToken) || !$clCloud->loginToken->validate()){
 
 try{
     // For more information about the optional headers please visit: https://api.copyleaks.com/GeneralDocumentation/RequestHeaders
-    $additionalHeaders = array(//$clConst['SANDBOX_MODE_HEADER'], // Sandbox mode - Scan without consuming any credits and get back dummy results
+    $additionalHeaders = array($clConst['SANDBOX_MODE_HEADER'], // Sandbox mode - Scan without consuming any credits and get back dummy results
                                 //$clConst['HTTP_CALLBACK'].': http://your.website.com/callbacks/', # For a fast testing of callbacks option we recommend to use http://requestb.in
                                 //$clConst['IN_PROGRESS_RESULT'].': http://your.website.com/callback/results/,
                                 //$clConst['EMAIL_CALLBACK'].': myemail@company.com',
                                 //$clConst['CLIENT_CUSTOM_PREFIX'].'name: some name'
                                 //$clConst['PARTIAL_SCAN_HEADER'],
-                                $clConst['COMPARE_ONLY']=TRUE # Compare files in between - available only on createByFiles
+                                //$clConst['COMPARE_ONLY']=TRUE # Compare files in between - available only on createByFiles
                                 //$clConst['IMPORT_FILE_TO_DATABASE'] # Import your file to our database only
                                 );
-   
-   
+  
+  
     // Create process using one of the following option.
     //$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
@@ -75,11 +75,11 @@ try{
     // Wait for the scan to complete
     while ($process->getStatus() != 100)
     {
-        sleep(2);             
+        sleep(2);            
     }
 
     echo '<BR/><BR/><strong>Finished Processing</strong>';
-   
+  
     echo "<BR/><BR/><strong>Results:</strong>";
     $results = $process->getResult();
     // Print the results
@@ -88,7 +88,9 @@ try{
     //    echo $result;
     //}
     echo $results[$cou];
-    //echo $results[$cou][0];
+    print_r($results[0]);
+    $val_r= (array)$results[0];
+    echo $val_r["Percents"];
     //echo $results[$cou][1];
     //echo $results[$cou]['Percents'];
     // Get the source text, result text and the comparison report between them.
@@ -105,17 +107,17 @@ try{
     //get processes list
     //$process_list = $clCloud->getProcessList();
     //print_r($process_list);
-   
+  
     //Get supported file types
     //$supportedFileTypes = $clCloud->getSupportedFileTypes();
     //echo "<BR/><BR/><strong>Supported File Types:</strong><BR/>";
     //print_r($supportedFileTypes);
-   
+  
     //Get OCR's(Images of text) supported languages
     //$ocrSupportedLanguages = $clCloud->getSupportedOCRLanguages();
     //echo "<BR/><BR/><strong>Supported OCR(Images of text only) Languages:</strong><BR/>";
     //print_r($ocrSupportedLanguages);
-   
+  
 }catch(Exception $e){
 
     echo "<br/>Failed with exception: ". $e->getMessage();
@@ -153,3 +155,4 @@ function build_table($array){
 //    echo build_table($plist['response']);
 
 ?>
+

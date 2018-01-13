@@ -15,6 +15,6 @@
 	fwrite($file,$data);
 	fclose($file);
 	echo "Submitted1";
-	redirect('http://localhost/badair/App/createAssignments.php');
+	redirect('http://localhost/Hackshetra/App/createAssignments.php');
 	//redirect('UserHome.html');
 ?>
