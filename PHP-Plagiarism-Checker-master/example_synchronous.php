@@ -60,12 +60,12 @@ try{
 	//$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
 	// $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
 	//$process = $clCloud->createByFile(filePath, $additionalHeaders);
-	$process = $clCloud->createByFiles(array("1.docx",
+	$processes = $clCloud->createByFiles(array("1.docx",
 											     "2.odt"),
 										 $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
 															  //						 the second([1]) is the error happend
 	//$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
-	
+	$process= $processes->first[0];
 	echo "<BR/><strong>Process created!</strong> (PID = '" . $process->processId . "')";
 
 	echo '<BR/><BR/><strong>Processing Started</strong>';
