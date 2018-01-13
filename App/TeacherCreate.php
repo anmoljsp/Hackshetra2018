@@ -5,7 +5,7 @@
 	<title></title>
 </head>
 <body>
-	<form action="fillDetails.php" method="POST" >
+	<form action="fillDetailsTeacher.php" method="POST" >
 		<table>
 			<tr>
 				<td><input type="text" name="fname" placeholder="First Name"></td>
@@ -29,12 +29,20 @@
 			</tr>
 			<tr>
 				<td>
-					<input  type="hidden" name="accType" value="Student">
+					<input  type="hidden" name="accType" value="Teacher">
+				</td>
+			</tr>
+			<tr><td>Teacher Assignement</td></tr>
+			<tr>
+				<td>Class Assigned</td>
+				<td>
+					<input  type="text" name="C_Id" >
 				</td>
 			</tr>
 			<tr>
+				<td>Subject Assigned</td>
 				<td>
-					<input  type="text" name="class" placeholder="Class-Name">
+					<input  type="text" name="S_Id" >
 				</td>
 			</tr>
 			<tr>
@@ -43,6 +51,7 @@
 				</td>
 			</tr>
 		</table>
+
 	</form>
 </body>
 </html>
