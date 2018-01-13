@@ -143,8 +143,7 @@ function build_table($array){
 }
 
 //print process list as HTML table
-if(isset($plist,$plist['response']) && count($plist['response'])>0){
-	//echo "<p>abcd</p>";
+if(isset($plist,$plist['response']) && count($plist['response'])>0)
 	echo build_table($plist['response']);
-}
+
 ?>
