@@ -1,7 +1,19 @@
 <?php
-  
+session_start();
+function redirect($url,$permanent=false)
+{
+  if($permanent)
+  {
+    header('HTTP/1.1 301 Moved Permanently');
+  }
+  header('Location: '.$url);
+  exit();
+}
+if(isset($_POST["Username"]))
+{
+  redirect('UserHome.html');
+}
 ?>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
