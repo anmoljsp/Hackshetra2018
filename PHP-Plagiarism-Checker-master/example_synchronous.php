@@ -88,8 +88,9 @@ try{
     //    echo $result;
     //}
     echo $results[$cou];
-    echo $results[0][0];
-    //echo $results[$cou][0];
+    print_r($results[0]);
+    $val_r= (array)$results[0];
+    echo $val_r["Percents"];
     //echo $results[$cou][1];
     //echo $results[$cou]['Percents'];
     // Get the source text, result text and the comparison report between them.
