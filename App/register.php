@@ -28,39 +28,6 @@
 table,tr,td{
   text-align:center;padding:10px;
 }
-.slideanim {visibility:hidden;}
-.slide {
-    /* The name of the animation */
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    /* The duration of the animation */
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    /* Make the element visible */
-    visibility: visible;
-}
-
-/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
-@keyframes slide {
-    0% {
-        opacity: 0;
-        transform: translateY(70%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
-@-webkit-keyframes slide {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(70%);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0%);
-    }
-}
   </style>
 </head>
 <body style="margin:0px;padding:0px;color:white;background-repeat:no repeat;width:100%;">
