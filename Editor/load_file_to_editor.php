@@ -10,7 +10,6 @@
       </h4>
       <input id="myFile" name="myFile" type="file"/>
       <textarea name="area2" id="area2" style="width: 100%; height: 70%;">
-      lorumipsum
       </textarea>
  
       <br/>
