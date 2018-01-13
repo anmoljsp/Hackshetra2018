@@ -4,7 +4,7 @@
 	<title>Assignments</title>
 </head>
 <body>
-	<form action="fillAssignments.php" method ="POST">
+	<form action="fillSolutions.php" method ="POST">
     <fieldset>
       <legend>Solutions</legend>
       <table>
@@ -17,12 +17,16 @@
           <td><input type="text" name="Subject" ></td>
         </tr>
         <tr>
-          
+        <tr>
+          <td>Assignment-Id</td>
+          <td><input type="text" name="AssId" ></td>
+        </tr>
+        <tr>          
           <td>Upload</td>
-          <td><input type="file" name="Assignment" ></td>
+          <td><input type="file" name="Solution" ></td>
         </tr>
         <tr>
-         <td colspan="2"><input type="submit" value="SubmiT" name="submit"></td>
+         <td colspan="2"><input type="submit" value="Submit" name="submit"></td>
         </tr>
       </table>
     </fieldset>
