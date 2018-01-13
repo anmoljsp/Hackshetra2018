@@ -26,6 +26,7 @@ function redirect($url,$permanent=false)
 			echo "Here it is";
 			if($class != ""&&$subject != "")
 			{
+				echo "I am";
 		    	$query1="SELECT `Class_Id` FROM `Classes` WHERE `Class_Name`='".$class."'";
 		    	$res1=mysqli_query($db,$query);
 		    	$res1=mysqli_fetch_assoc($res1);
@@ -34,10 +35,11 @@ function redirect($url,$permanent=false)
 		    	$res2=mysqli_query($db,$query2);
 		    	$res2=mysqli_fetch_assoc($res2);
 		    	$subject=$res2["Subject_Id"];
-		    	$query3="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$Username."'";
-	      		$res3=mysqli_query($db,$query3);
-	      		$res3=mysqli_fetch_assoc($res3);
-	      		$T_Id=$res3["S.No."];
+		    	// $query3="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$Username."'";
+	      // 		$res3=mysqli_query($db,$query3);
+	      // 		$res3=mysqli_fetch_assoc($res3);
+	      		// $T_Id=$res3["S.No."];
+	      		$T_Id='12';
 		    	$query4="INSERT INTO `Assignments`(`Class_Id`, `Subject_Code`, `T_No`) VALUES ('$class','$subject','$T_Id')";
 		    	$res4=mysqli_query($db,$query4);
 		    	if($res4)

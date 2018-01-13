@@ -6,7 +6,7 @@
 <body>
 	<form action="fillAssignments.php" method ="POST">
     <fieldset>
-      <legend>Assignments</legend>
+      <legend>Solutions</legend>
       <table>
         <tr>
           <td>Class</td>
@@ -17,6 +17,7 @@
           <td><input type="text" name="Subject" ></td>
         </tr>
         <tr>
+          
           <td>Upload</td>
           <td><input type="file" name="Assignment" ></td>
         </tr>
