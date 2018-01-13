@@ -61,7 +61,7 @@ try{
 	// $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
 	//$process = $clCloud->createByFile(filePath, $additionalHeaders);
 	$processes = $clCloud->createByFiles(array("1.docx",
-											     "2.docx"),
+											     "2.odt"),
 										 $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
 															  //						 the second([1]) is the error happend
 	//$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
