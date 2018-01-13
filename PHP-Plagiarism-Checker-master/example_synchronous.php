@@ -88,8 +88,8 @@ try{
     //    echo $result;
     //}
      $results[$cou];
-    echo $results[$cou][0];
-    echo $results[$cou][1];
+    //echo $results[$cou][0];
+    //echo $results[$cou][1];
     //echo $results[$cou]['Percents'];
     // Get the source text, result text and the comparison report between them.
     //echo "<BR/><BR/><strong>Cached Version:</strong> ".$process->getRawText()."<BR/>";
