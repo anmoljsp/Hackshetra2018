@@ -12,6 +12,7 @@ function redirect($url,$permanent=false)
 	header('Location: '.$url);
 	exit();
 }
+// echo $_SESSION["Username"];
 $uname=$password="";
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
@@ -19,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 	if(isset($_POST["login"]))
 	{
 		$uname=mysqli_real_escape_string($db,$_POST["uname"]);
-		$_SESSION["Username"]=$uname;
+		// $_SESSION["Username"]=$uname;
 		$password=mysqli_real_escape_string($db,$_POST["password"]);
 		
 
@@ -37,6 +38,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 			{
 				echo "Pass Match";
 				$_SESSION["Username"]=$uname;
+				// echo $_SESSION["Username"];
 				redirect('UserHome.html');
 			}
 			else

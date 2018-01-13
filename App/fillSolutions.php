@@ -11,9 +11,9 @@ function redirect($url,$permanent=false)
 	header('Location: '.$url);
 	exit();
 }
-// if(!isset($_SESSION['Username']){
-// 	redirect("index.php");
-// }
+if(!isset($_SESSION['Username'])){
+	redirect("index.php");
+}
 	$class= $subject= "";
 	$Username=$_SESSION['Username'];
 	echo "hey";
