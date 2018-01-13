@@ -23,11 +23,11 @@ $clConst = $config->getConstants();
 // If you don't have an account yet register on https://copyleaks.com/account/register
 // Your API-KEY is available at the dashboards on https://api.copyleaks.com/. Choose the dashboard of the product that you would like to use.
 $email = 'anmoljsp@gmail.com';
-$apiKey = 'bc89fa6f-3668-4931-9ca6-a491a254dc30';
+$apiKey = '09e40067-7b6f-4c06-8a40-492f07dd8efe';
 
 // Login to Copyleaks Cloud
 try{
-	$clCloud = new CopyleaksCloud($email, $apiKey, Products::Businesses);
+	$clCloud = new CopyleaksCloud($email, $apiKey, Products::Education);
 }catch(Exception $e){
 	echo "<Br/>Failed to connect to Copyleaks Cloud with exception: ". $e->getMessage();
 	die();
@@ -60,13 +60,13 @@ try{
 	//$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
 	// $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
 	//$process = $clCloud->createByFile(filePath, $additionalHeaders);
-	$processes = $clCloud->createByFiles(array("1.docx",
-											     "2.docx"),
+	$processes = $clCloud->createByFiles(array("apj.odt",
+											     "apj2.odt"),
 										 $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
 															  //						 the second([1]) is the error happend
 	//$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
-	echo $processes[1];
-	print_r($processes[0]);
+		//print_r($processes[0]);
+	//print_r($processes[1]);
 	$process = $processes[0][0];
 	echo "<BR/><strong>Process created!</strong> (PID = '" . $process->processId . "')";
 
@@ -83,10 +83,11 @@ try{
 	echo "<BR/><BR/><strong>Results:</strong>";
 	$results = $process->getResult();
 	// Print the results
-	foreach ($results as $result) {
-		echo $result;
-	}
-	
+	$cou=sizeof($results) - 1;
+	//foreach ($results as $result) {
+	//	echo $result;
+	//}
+	echo $results[$cou];
 	// Get the source text, result text and the comparison report between them.
 	//echo "<BR/><BR/><strong>Cached Version:</strong> ".$process->getRawText()."<BR/>";
 	//echo "<BR/><strong>Result Raw Text:</strong> ".$clCloud->getResultRawText($results[0])."<BR/>";
