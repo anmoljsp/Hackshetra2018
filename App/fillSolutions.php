@@ -24,7 +24,7 @@ function redirect($url,$permanent=false)
 			$class=$_POST["Class"];
 			$subject=$_POST["Subject"];
 			$assId=$_POST["AssId"];
-			$solution=$_POST["Solutions"];
+			$solution=$_POST["Solution"];
 			echo "Here it is";
 			if($class != ""&&$subject != "")
 			{
