@@ -47,13 +47,13 @@ echo "<Br/><strong>Logged in successfully</strong><Br/>";
 
 try{
 	// For more information about the optional headers please visit: https://api.copyleaks.com/GeneralDocumentation/RequestHeaders
-	$additionalHeaders = array($clConst['SANDBOX_MODE_HEADER'], // Sandbox mode - Scan without consuming any credits and get back dummy results
-                                $clConst['HTTP_CALLBACK'].': response.php' # For a fast testing of callbacks option we recommend to use http://requestb.in
+	$additionalHeaders = array(//$clConst['SANDBOX_MODE_HEADER'], // Sandbox mode - Scan without consuming any credits and get back dummy results
+                               // $clConst['HTTP_CALLBACK'].': response.php' # For a fast testing of callbacks option we recommend to use http://requestb.in
 								//$clConst['IN_PROGRESS_RESULT'].': http://your.website.com/callback/results/,
 								//$clConst['EMAIL_CALLBACK'].': myemail@company.com',
 								//$clConst['CLIENT_CUSTOM_PREFIX'].'name: some name'
 								//$clConst['PARTIAL_SCAN_HEADER'],
-								//$clConst['COMPARE_ONLY'], # Compare files in between - available only on createByFiles
+								$clConst['COMPARE_ONLY']=TRUE, # Compare files in between - available only on createByFiles
 								//$clConst['IMPORT_FILE_TO_DATABASE'] # Import your file to our database only
 								);
 	
