@@ -23,7 +23,8 @@ function redirect($url,$permanent=false)
 		{
 			$class=$_POST["Class"];
 			$subject=$_POST["Subject"];
-			$assignment=$_POST["Assignment"];
+			$assId=$_POST["AssId"];
+			$solution=$_POST["Solutions"];
 			echo "Here it is";
 			if($class != ""&&$subject != "")
 			{
@@ -39,13 +40,13 @@ function redirect($url,$permanent=false)
 		    	// $query3="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$Username."'";
 	      // 		$res3=mysqli_query($db,$query3);
 	      // 		$res3=mysqli_fetch_assoc($res3);
-	      		// $T_Id=$res3["S.No."];
-	      		$T_Id='12';
-		    	$query4="INSERT INTO `Assignments`(`Class_Id`, `Subject_Code`, `T_No`) VALUES ('$class','$subject','$T_Id')";
+	      		// $Std_Id=$res3["S.No."];
+	      		$Std_Id='16';
+		    	$query4="INSERT INTO `Solutions`(`Class_Id`, `Subject_Code`,`AssId` `Std_Id`,`Sol_Link`) VALUES ('$class','$subject','$assId','$Std_Id','$solution')";
 		    	$res4=mysqli_query($db,$query4);
 		    	if($res4)
 		    	{
-		      		// redirect('UserHome.html');
+		      		redirect('UserHome.html');
 		      		// echo $password;
 
 		    	}
