@@ -88,9 +88,9 @@ try{
 	//	echo $result;
 	//}
 	echo $results[$cou];
-	//echo $results[$cou]['URL'];
-	//echo $results[$cou]['Title'];
-	//echo $results[$cou]['Percents'];
+	echo $results[$cou]['URL'];
+	echo $results[$cou]['Title'];
+	echo $results[$cou]['Percents'];
 	// Get the source text, result text and the comparison report between them.
 	//echo "<BR/><BR/><strong>Cached Version:</strong> ".$process->getRawText()."<BR/>";
 	//echo "<BR/><strong>Result Raw Text:</strong> ".$clCloud->getResultRawText($results[0])."<BR/>";
