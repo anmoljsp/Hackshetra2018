@@ -28,6 +28,9 @@
 table,tr,td{
   text-align:center;padding:10px;
 }
+input{
+	color:black;
+}
   </style>
 </head>
 <body style="margin:0px;padding:0px;color:white;background-repeat:no repeat;width:100%;">
