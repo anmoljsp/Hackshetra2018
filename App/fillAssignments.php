@@ -29,7 +29,7 @@ function redirect($url,$permanent=false)
 			{
 				echo "I am";
 		    	$query1="SELECT `Class_Id` FROM `Classes` WHERE `Class_Name`='".$class."'";
-		    	$res1=mysqli_query($db,$query);
+		    	$res1=mysqli_query($db,$query1);
 		    	$res1=mysqli_fetch_assoc($res1);
 		    	$class=$res1["Class_Id"];
 		    	echo $class;
@@ -42,11 +42,11 @@ function redirect($url,$permanent=false)
 	      // 		$res3=mysqli_fetch_assoc($res3);
 	      		// $T_Id=$res3["S.No."];
 	      		$T_Id='12';
-		    	$query4="INSERT INTO `Assignments`(`Class_Id`, `Subject_Code`, `T_No`) VALUES ('$class','$subject','$T_Id')";
+		    	$query4="INSERT INTO `Assignments`(Class_Id, Subject_Code, T_No) VALUES ('$class','$subject','$T_Id')";
 		    	$res4=mysqli_query($db,$query4);
 		    	if($res4)
 		    	{
-		      		redirect('UserHome.html');
+		      		// redirect('UserHome.html');
 		      		// echo $password;
 
 		    	}

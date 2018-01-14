@@ -9,7 +9,7 @@ function redirect($url,$permanent=false)
   header('Location: '.$url);
   exit();
 }
-if(isset($_POST["Username"]))
+if(isset($_SESSION["Username"]))
 {
   redirect('UserHome.html');
 }
