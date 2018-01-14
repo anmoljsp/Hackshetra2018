@@ -60,7 +60,7 @@ try{
     //$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
     //$process = $clCloud->createByFile(filePath, $additionalHeaders);
-    $processes = $clCloud->createByFiles(array($solution,
+    $processes = $clCloud->createByFiles(array("apj.odt",
                                                  "apj2.odt"),
                                          $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
                                                               //                         the second([1]) is the error happend
