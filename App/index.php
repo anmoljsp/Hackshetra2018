@@ -11,6 +11,7 @@ function redirect($url,$permanent=false)
 }
 if(isset($_POST["Username"]))
 {
+
   redirect('UserHome.html');
 }
 ?>
@@ -75,6 +76,9 @@ table,tr,td{
         opacity: 1;
         -webkit-transform: translateY(0%);
     }
+}
+input{
+  color:black;
 }
   </style>
 </head>
