@@ -36,9 +36,9 @@ input{
 <body style="margin:0px;padding:0px;color:white;background-repeat:no repeat;width:100%;">
 <div  class="container" style="background-image: url('back.jpg');background-size: cover;margin:0px;padding:0px;width:100%;">
   <h1 style="text-align: center;font-size:300%;">Anonymous</h1>
+  <br>
+  <h4 style="text-align: center;">ADD TEACHER</h4>
   <br><br>
-  <h2 style="text-align: center;">ADD TEACHER</h2>
-  <br><br><br>
   <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-4" style="text-align:center;background-color:rgba(0,0,0,0.5);">
@@ -69,7 +69,7 @@ input{
 					<input  type="hidden" name="accType" value="Teacher">
 				</td>
 			</tr>
-			<tr><td>Teacher Assignement</td></tr>
+			<tr><td>Timetable Allotment</td></tr>
 			<tr>
 				<td>Class Assigned</td>
 				<td>
