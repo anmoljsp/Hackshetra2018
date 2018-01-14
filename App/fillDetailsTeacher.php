@@ -1,6 +1,5 @@
 <?php
-	include("config.php");
-	include("encryption.php");
+	session_start();
 	function redirect($url,$permanent=false)
 	{
 		if($permanent)
@@ -10,8 +9,14 @@
 		header('Location: '.$url);
 		exit();
 	}
+  if(!isset($_SESSION['Username']){
+
+  	redirect("index.php");
+  }
+	include("config.php");
+	include("encryption.php");
+	
 	$fname= $lname= $uname= $password= "";
-	echo "hey";
 	if($_SERVER["REQUEST_METHOD"]=="POST")
 	{
 		if(isset($_POST['register']))
@@ -49,7 +54,6 @@
 			      		$res3=mysqli_query($db,$query3);
 			      		$res3=mysqli_fetch_assoc($res3);
 			      		$T_Id=$res3["S.No."];
-			      		$T_Id=$T_Id;
 			      		$query2="INSERT INTO `Teacher-Details`(T_No,Class_Id,Subject_Code) VALUES ('$T_Id','$C_Id','$S_Id')";
 			    		$res2=mysqli_query($db,$query2);
 			    		if($res2)
