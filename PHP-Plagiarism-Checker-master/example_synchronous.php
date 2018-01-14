@@ -87,7 +87,7 @@ try{
     $c=1;
     foreach ($results as $result) {
 $val_r= (array)$result;
-echo $c + ".---"
+echo $c + ".---";
 echo "Title" + $val_r["Title"];
 
 echo "URL" + $val_r["URL"];
