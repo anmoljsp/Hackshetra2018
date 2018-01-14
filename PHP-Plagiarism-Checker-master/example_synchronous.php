@@ -22,12 +22,12 @@ $clConst = $config->getConstants();
 // Use the email that you used to register to Copyleaks.
 // If you don't have an account yet register on https://copyleaks.com/account/register
 // Your API-KEY is available at the dashboards on https://api.copyleaks.com/. Choose the dashboard of the product that you would like to use.
-$email = 'anmoljsp@gmail.com';
-$apiKey = '09e40067-7b6f-4c06-8a40-492f07dd8efe';
+$email = 'piyushyadav2897@gmail.com';
+$apiKey = '76a6235f-b82a-4252-a6f5-896e73e4ee40';
 
 // Login to Copyleaks Cloud
 try{
-	$clCloud = new CopyleaksCloud($email, $apiKey, Products::Websites);
+	$clCloud = new CopyleaksCloud($email, $apiKey, Products::Businesses);
 }catch(Exception $e){
 	echo "<Br/>Failed to connect to Copyleaks Cloud with exception: ". $e->getMessage();
 	die();
