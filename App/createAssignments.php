@@ -28,7 +28,7 @@
   </form>
   <div>
   To create an assignment click below:
-  <a href="http://localhost/badair/Editor/NicEdit.html" >Create Assignemnt</a>
+  <a href="http://localhost/Hackshetra/Editor/NicEdit.html" >Create Assignemnt</a>
   </div>
 </body>
 </html>

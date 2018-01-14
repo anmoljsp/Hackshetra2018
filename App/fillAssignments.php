@@ -32,6 +32,7 @@ function redirect($url,$permanent=false)
 		    	$res1=mysqli_query($db,$query);
 		    	$res1=mysqli_fetch_assoc($res1);
 		    	$class=$res1["Class_Id"];
+		    	echo $class;
 		    	$query2="SELECT `Subject_Id` FROM `Subjects` WHERE `Subject_Name`='".$subject."'";
 		    	$res2=mysqli_query($db,$query2);
 		    	$res2=mysqli_fetch_assoc($res2);
@@ -45,7 +46,7 @@ function redirect($url,$permanent=false)
 		    	$res4=mysqli_query($db,$query4);
 		    	if($res4)
 		    	{
-		      		// redirect('UserHome.html');
+		      		redirect('UserHome.html');
 		      		// echo $password;
 
 		    	}

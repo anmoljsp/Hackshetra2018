@@ -30,9 +30,11 @@ function redirect($url,$permanent=false)
 			{
 				echo "I am";
 		    	$query1="SELECT `Class_Id` FROM `Classes` WHERE `Class_Name`='".$class."'";
-		    	$res1=mysqli_query($db,$query);
+		    	$res1=mysqli_query($db,$query1);
 		    	$res1=mysqli_fetch_assoc($res1);
 		    	$class=$res1["Class_Id"];
+		    	echo "Here i am ";
+		    	echo $class;
 		    	$query2="SELECT `Subject_Id` FROM `Subjects` WHERE `Subject_Name`='".$subject."'";
 		    	$res2=mysqli_query($db,$query2);
 		    	$res2=mysqli_fetch_assoc($res2);
