@@ -75,33 +75,33 @@ table,tr,td{
 	<form action="fillDetails.php" method="POST" >
 		<table>
 			<tr>
-				<td><input type="text" name="fname" placeholder="First Name"></td>
-				<td><input type="text" name="lname" placeholder="Last Name"></td>
+				<td><input type="text" name="fname" placeholder="First Name" style="color:black;"></td>
+				<td><input type="text" name="lname" placeholder="Last Name" style="color:black;"></td>
 			</tr>
 			<tr>
 				<td>
-					<input  type="text" name="email" placeholder="Email" length="10">
+					<input  type="text" name="email" placeholder="Email" length="10" style="color:black;">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input  type="text" name="mobile_no" placeholder="Contact Number" length="10">
+					<input  type="text" name="mobile_no" placeholder="Contact Number" length="10" style="color:black;">
 				</td>
 			</tr>
 			<tr>
-				<td><input  type="text" name="username" placeholder="Username" length="10"></td>
+				<td><input  type="text" name="username" placeholder="Username" length="10" style="color:black;"></td>
 			</tr>
 			<tr>
-				<td><input  type="password" name="password" placeholder="Password"></td>
+				<td><input  type="password" name="password" placeholder="Password" style="color:black;"></td>
 			</tr>
 			<tr>
 				<td>
-					<input  type="hidden" name="accType" value="Student">
+					<input  type="hidden" name="accType" value="Student" style="color:black;">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input  type="text" name="class" placeholder="Class-Name">
+					<input  type="text" name="class" placeholder="Class-Name" style="color:black;">
 				</td>
 			</tr>
 			<tr>
