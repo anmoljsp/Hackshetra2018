@@ -84,7 +84,7 @@ input{
 			</tr>
 			<tr>
 				<td>
-					<input type="submit" value="Register" name="register" >
+					<input type="submit" value="Register" name="register" style="text-align:center;">
 				</td>
 			</tr>
 		</table>
