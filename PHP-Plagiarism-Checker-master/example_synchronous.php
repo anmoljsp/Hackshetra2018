@@ -87,11 +87,11 @@ try{
     $c=1;
     foreach ($results as $result) {
 $val_r= (array)$result;
-echo $c + ".---";
-echo "Title" + $val_r["Title"];
+echo $c . ".---";
+echo "Title" . $val_r["Title"];
 
-echo "URL" + $val_r["URL"];
-    echo "Percentage plagiarized" + $val_r["Percents"]; 
+echo "URL" . $val_r["URL"];
+    echo "Percentage plagiarized" . $val_r["Percents"]; 
     $c = $c +1;   }
     //echo $results[$cou];
     //print_r($results[0]);
