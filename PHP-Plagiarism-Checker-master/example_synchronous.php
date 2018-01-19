@@ -45,13 +45,13 @@ if(!isset($clCloud->loginToken) || !$clCloud->loginToken->validate()){
 
 try{
     // For more information about the optional headers please visit: https://api.copyleaks.com/GeneralDocumentation/RequestHeaders
-    $additionalHeaders = array($clConst['SANDBOX_MODE_HEADER'], // Sandbox mode - Scan without consuming any credits and get back dummy results
+    $additionalHeaders = array(//$clConst['SANDBOX_MODE_HEADER'], // Sandbox mode - Scan without consuming any credits and get back dummy results
                                 //$clConst['HTTP_CALLBACK'].': http://your.website.com/callbacks/', # For a fast testing of callbacks option we recommend to use http://requestb.in
                                 //$clConst['IN_PROGRESS_RESULT'].': http://your.website.com/callback/results/,
                                 //$clConst['EMAIL_CALLBACK'].': myemail@company.com',
                                 //$clConst['CLIENT_CUSTOM_PREFIX'].'name: some name'
                                 //$clConst['PARTIAL_SCAN_HEADER'],
-                                //$clConst['COMPARE_ONLY']=TRUE # Compare files in between - available only on createByFiles
+                                $clConst['COMPARE_ONLY']=TRUE # Compare files in between - available only on createByFiles
                                 //$clConst['IMPORT_FILE_TO_DATABASE'] # Import your file to our database only
                                 );
   
@@ -83,14 +83,20 @@ try{
     echo "<BR/><BR/><strong>Results:</strong>";
     $results = $process->getResult();
     // Print the results
-    $cou=sizeof($results) - 1;
-    //foreach ($results as $result) {
-    //    echo $result;
-    //}
-    echo $results[$cou];
-    print_r($results[0]);
-    $val_r= (array)$results[0];
-    echo $val_r["Percents"];
+    //$cou=sizeof($results) - 1;
+    $c=1;
+    foreach ($results as $result) {
+$val_r= (array)$result;
+echo $c . ".---<br>";
+
+echo "Title" . $val_r["Title"]."<br>";
+
+echo "URL" . $val_r["URL"]."<br>";
+    echo "Percentage plagiarized" . $val_r["Percents"]."<br><br><br>"; 
+    $c = $c +1;   }
+    //echo $results[$cou];
+    //print_r($results[0]);
+    
     //echo $results[$cou][1];
     //echo $results[$cou]['Percents'];
     // Get the source text, result text and the comparison report between them.
@@ -149,7 +155,6 @@ function build_table($array){
     $html .= '</table>';
     return $html;
 }
-
 //print process list as HTML table
 //if(isset($plist,$plist['response']) && count($plist['response'])>0)
 //    echo build_table($plist['response']);

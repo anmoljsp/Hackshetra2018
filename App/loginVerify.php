@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 				echo "Pass Match";
 				$_SESSION["Username"]=$uname;
 				// echo $_SESSION["Username"];
-				redirect('UserHome.html');
+				redirect('createAssignments.php');
 			}
 			else
 			{
