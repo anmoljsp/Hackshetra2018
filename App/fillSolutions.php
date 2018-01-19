@@ -23,17 +23,11 @@ if(!isset($_SESSION['Username'])){
 }
 	$class= $subject= "";
 	$Username=$_SESSION['Username'];
-	echo "hey";
-	if($_SERVER["REQUEST_METHOD"]=="POST")
-	{
-		if(isset($_POST['submit']))
-		{
-			$class=$_POST["Class"];
-			$subject=$_POST["Subject"];
-			$assId=$_POST["AssId"];
-			$solution=$_POST["Solution"];
-			echo "Here it is";
-            echo $solution;
+	
+			$class=$_SESSION["class"];
+			$subject=$_SESSION["subject"];
+			$assId=$_SESSION["AssID"];
+			$solution=$_SESSION["id"];
 			if($class != ""&&$subject != "")
 			{
 
@@ -70,7 +64,7 @@ try{
                                 //$clConst['EMAIL_CALLBACK'].': myemail@company.com',
                                 //$clConst['CLIENT_CUSTOM_PREFIX'].'name: some name'
                                 //$clConst['PARTIAL_SCAN_HEADER'],
-                                $clConst['COMPARE_ONLY']=TRUE # Compare files in between - available only on createByFiles
+                                //$clConst['COMPARE_ONLY']=TRUE  # Compare files in between - available only on createByFiles
                                 //$clConst['IMPORT_FILE_TO_DATABASE'] # Import your file to our database only
                                 );
   
@@ -78,16 +72,16 @@ try{
     // Create process using one of the following option.
     //$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
-    $process = $clCloud->createByFile(filePath, $additionalHeaders);
-    //$processes = $clCloud->createByFiles(array($solution,                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
+    //$process = $clCloud->createByFile($file, $additionalHeaders);
+    $processes = $clCloud->createByFiles(array("../PHP-Plagiarism-Checker-master/apj2.odt",                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
                                                               //                         the second([1]) is the error happend
     //$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
         //print_r($processes[0]);
     //print_r($processes[1]);
     $process = $processes[0][0];
-    echo "<BR/><strong>Process created!</strong> (PID = '" . $process->processId . "')";
+    // echo "<BR/><strong>Process created!</strong> (PID = '" . $process->processId . "')";
 
-    echo '<BR/><BR/><strong>Processing Started</strong>';
+    // echo '<BR/><BR/><strong>Processing Started</strong>';
 
     // Wait for the scan to complete
     while ($process->getStatus() != 100)
@@ -95,7 +89,7 @@ try{
         sleep(2);            
     }
 
-    echo '<BR/><BR/><strong>Finished Processing</strong>';
+   // echo '<BR/><BR/><strong>Finished Processing</strong>';
   
     echo "<BR/><BR/><strong>Results:</strong>";
     $results = $process->getResult();
@@ -104,11 +98,13 @@ try{
     $c=1;
     foreach ($results as $result) {
 $val_r= (array)$result;
-echo $c + ".---";
-echo "Title" + $val_r["Title"];
+echo "<div class='row'><div class='col-sm-4'>"
+echo $c . ".---<br>";
 
-echo "URL" + $val_r["URL"];
-    echo "Percentage plagiarized" + $val_r["Percents"]; 
+echo "Title" . $val_r["Title"]."<br>";
+
+echo "URL" . $val_r["URL"]."<br>";
+    echo "Percentage plagiarized" . $val_r["Percents"]."<br><br><br></div>"; 
     $c = $c +1;   }
 
   
@@ -153,8 +149,6 @@ function build_table($array){
 		    	$res1=mysqli_query($db,$query1);
 		    	$res1=mysqli_fetch_assoc($res1);
 		    	$class=$res1["Class_Id"];
-		    	echo "Here i am ";
-		    	echo $class;
 		    	$query2="SELECT `Subject_Id` FROM `Subjects` WHERE `Subject_Name`='".$subject."'";
 		    	$res2=mysqli_query($db,$query2);
 		    	$res2=mysqli_fetch_assoc($res2);
@@ -178,9 +172,7 @@ function build_table($array){
 	    			echo("Error description: " . mysqli_error($db));
 	    		}
 
-			}
-
-		}
+			
 
 	}
 ?>
