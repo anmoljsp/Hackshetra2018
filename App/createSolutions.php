@@ -68,5 +68,9 @@
       bkLib.onDomLoaded(loadEditor());
       // document.getElementById("nicEdit-main").innerHTML = contents;
       </script>
+   <div>
+  To create an assignment click below:
+  <a href="../Editor/NicEdit.html" >Create Assignement Solution</a>
+  </div>     
 </body>
 </html>
