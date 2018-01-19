@@ -32,6 +32,7 @@ if(!isset($_SESSION['Username'])){
 			$assId=$_POST["AssId"];
 			$solution=$_POST["Solution"];
 			echo "Here it is";
+            echo $solution;
 			if($class != ""&&$subject != "")
 			{
 
@@ -62,7 +63,7 @@ if(!isset($clCloud->loginToken) || !$clCloud->loginToken->validate()){
 
 try{
     // For more information about the optional headers please visit: https://api.copyleaks.com/GeneralDocumentation/RequestHeaders
-    $additionalHeaders = array(//$clConst['SANDBOX_MODE_HEADER'], // Sandbox mode - Scan without consuming any credits and get back dummy results
+    $additionalHeaders = array($clConst['SANDBOX_MODE_HEADER']=TRUE, // Sandbox mode - Scan without consuming any credits and get back dummy results
                                 //$clConst['HTTP_CALLBACK'].': http://your.website.com/callbacks/', # For a fast testing of callbacks option we recommend to use http://requestb.in
                                 //$clConst['IN_PROGRESS_RESULT'].': http://your.website.com/callback/results/,
                                 //$clConst['EMAIL_CALLBACK'].': myemail@company.com',
