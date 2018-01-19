@@ -4,6 +4,7 @@
 	include("encryption.php");
 
 
+
 	$class= $subject= "";
 	if($_SERVER["REQUEST_METHOD"]=="POST")
 	{

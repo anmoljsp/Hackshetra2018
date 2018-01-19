@@ -1,4 +1,4 @@
-<? php
+<?php
 	session_start();
 	function redirect($url,$permanent=false)
 	{
@@ -68,12 +68,36 @@ input{
   <div class="row" style="min-height:100%vh;">
     <div class="col-sm-3">
       <div style="width:100%;height:100%;background-color:#0074D9;">
-        <br><br><br><br><br>
-      </div>
-    </div>
-    <div class="col-sm-1"></div>
-    
-    <div class="col-sm-6" style="text-align:center;background-color:rgba(0,0,0,0.5);">
+
+<?php session_start()
+
+$username = $_POST['username'];
+
+$query1="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$username."'";
+$res1=mysqli_query($db,$query1);
+$res1=mysqli_fetch_assoc($res1);
+$sno=$res1["Class_Id"];
+
+$query1="SELECT `*` FROM `Assignments` WHERE `T_No`='".$sno."'";
+$res1=mysqli_query($db,$query1);
+while ($row = mysqli_fetch_assoc($res1))
+{
+  echo "<div style='float:left;'><table><tr>";
+  echo $row['Ass_Link'];
+  echo "</td></tr><tr><td>Ass_No:</td><td>";
+  echo $row['Ass_No'];
+  echo "</td></tr></table></div>";
+}
+
+?>
+        
+
+<br><br><br><br><br>
+</div>
+</div>
+<div class="col-sm-1"></div>
+
+<div class="col-sm-6" style="text-align:center;background-color:rgba(0,0,0,0.5);">
       <br><br><br><br><br><br><br><br><br><br>
 </div>
 <div class="col-sm-1">
