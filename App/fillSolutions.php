@@ -101,11 +101,12 @@ try{
     $c=1;
     foreach ($results as $result) {
 $val_r= (array)$result;
-echo $c + ".---";
-echo "Title" + $val_r["Title"];
+echo $c . ".---<br>";
 
-echo "URL" + $val_r["URL"];
-    echo "Percentage plagiarized" + $val_r["Percents"]; 
+echo "Title" . $val_r["Title"]."<br>";
+
+echo "URL" . $val_r["URL"]."<br>";
+    echo "Percentage plagiarized" . $val_r["Percents"]."<br><br><br>"; 
     $c = $c +1;   }
 
   
