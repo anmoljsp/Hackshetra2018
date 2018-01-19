@@ -40,7 +40,7 @@ $apiKey = '76a6235f-b82a-4252-a6f5-896e73e4ee40';
 
 // Login to Copyleaks Cloud
 try{
-    $clCloud = new CopyleaksCloud($email, $apiKey, Products::Businesses);
+    $clCloud = new CopyleaksCloud($email, $apiKey, Products::Education);
 }catch(Exception $e){
     echo "<Br/>Failed to connect to Copyleaks Cloud with exception: ". $e->getMessage();
     die();
