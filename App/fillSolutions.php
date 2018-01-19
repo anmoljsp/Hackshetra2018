@@ -74,7 +74,7 @@ try{
     //$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
     //$process = $clCloud->createByFile($file, $additionalHeaders);
-    $processes = $clCloud->createByFiles(array('./create_assignment_file/'.$solution,                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
+    $processes = $clCloud->createByFiles(array("../PHP-Plagiarism-Checker-master/apj.odt",                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
                                                               //                         the second([1]) is the error happend
     //$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
         //print_r($processes[0]);
