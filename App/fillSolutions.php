@@ -98,7 +98,7 @@ try{
     $c=1;
     foreach ($results as $result) {
 $val_r= (array)$result;
-echo "<div class='row'><div class='col-sm-4'>"
+echo "<div class='row'><div class='col-sm-4'>";
 echo $c . ".---<br>";
 
 echo "Title" . $val_r["Title"]."<br>";
