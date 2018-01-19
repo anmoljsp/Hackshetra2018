@@ -27,7 +27,8 @@ if(!isset($_SESSION['Username'])){
 			$class=$_SESSION["class"];
 			$subject=$_SESSION["subject"];
 			$assId=$_SESSION["AssID"];
-			$solution=$_SESSION["id"];
+			//$solution=$_SESSION["id"];
+            $solution = "IT-1_Assign1943_abhi";
 			if($class != ""&&$subject != "")
 			{
 
