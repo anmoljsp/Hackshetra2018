@@ -17,6 +17,7 @@ function redirect($url,$permanent=false)
 	header('Location: '.$url);
 	exit();
 }
+
 if(!isset($_SESSION['Username'])){
 	redirect("index.php");
 }
@@ -37,7 +38,7 @@ if(!isset($_SESSION['Username'])){
 
 $config = new \ReflectionClass('Copyleaks\Config');
 $clConst = $config->getConstants();
-
+$file = './create_assignment_file/*';
 
 $email = 'piyushyadav2897@gmail.com';
 $apiKey = '76a6235f-b82a-4252-a6f5-896e73e4ee40';
@@ -76,10 +77,8 @@ try{
     // Create process using one of the following option.
     //$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
-    //$process = $clCloud->createByFile(filePath, $additionalHeaders);
-    $processes = $clCloud->createByFiles(array($solution,
-                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),
-                                         $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
+    $process = $clCloud->createByFile(filePath, $additionalHeaders);
+    //$processes = $clCloud->createByFiles(array($solution,                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
                                                               //                         the second([1]) is the error happend
     //$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
         //print_r($processes[0]);
