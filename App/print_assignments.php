@@ -12,14 +12,32 @@
 		{
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			// echo $username;
-			// echo $password;
 			$query="SELECT Password FROM Acounts WHERE Username='".$username."'";
 			$res=mysqli_query($db,$query);
 			$res1=mysqli_fetch_assoc($res);
 			$pass = $res1["Password"];
-			//echo $pass;
-			echo mc_decrypt($pass,ENCRYPTION_KEY);
+			$pass = mc_decrypt($pass,ENCRYPTION_KEY);
+
+			if($pass == $password)
+			{
+				$query1="SELECT `S.NO.` FROM `Acounts` WHERE `Username`='".$username."'";
+		    	$res1=mysqli_query($db,$query1);
+		    	$res1=mysqli_fetch_assoc($res1);
+		    	$sid=$res1["S.No."];
+
+		    	$query1="SELECT `*` FROM `Solutions` WHERE `Std_Id`='".$sid."'";
+		    	$res1=mysqli_query($db,$query1);
+		    	while ($row=mysqli_fetch_assoc($res1))
+		    	{
+		    		echo "<div style='float:left;'><table><tr>";
+					echo "<td>Student ID:</td><td>";
+					echo $row['Std_Id'];
+					echo "</td></tr><tr><td>Solution Links:</td><td>";
+					echo $row['Sol_Links'];
+					echo "</td></tr></table></div>";
+		    	}
+			}
+
 			// $cnt=mysqli_num_rows($res);
 			// if($cnt>0)
 			// {
