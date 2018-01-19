@@ -2,6 +2,12 @@
 session_start();
 include("config.php");
 include("encryption.php");	
+//dependencies and autoload
+include_once( getcwd().'/autoload.php');
+use Copyleaks\CopyleaksCloud;
+use Copyleaks\CopyleaksProcess;
+use Copyleaks\Products;
+
 function redirect($url,$permanent=false)
 {
 	if($permanent)
@@ -28,11 +34,6 @@ if(!isset($_SESSION['Username'])){
 			echo "Here it is";
 			if($class != ""&&$subject != "")
 			{
-//dependencies and autoload
-include_once( getcwd().'/autoload.php');
-use Copyleaks\CopyleaksCloud;
-use Copyleaks\CopyleaksProcess;
-use Copyleaks\Products;
 
 /* CREATE CONFIG INSTANCE */
 $config = new \ReflectionClass('Copyleaks\Config');
@@ -90,7 +91,7 @@ try{
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
     //$process = $clCloud->createByFile(filePath, $additionalHeaders);
     $processes = $clCloud->createByFiles(array($solution,
-                                                 "apj2.odt"),
+                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),
                                          $additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
                                                               //                         the second([1]) is the error happend
     //$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
