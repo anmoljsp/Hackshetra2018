@@ -69,16 +69,18 @@ input{
     <div class="col-sm-3">
       <div style="width:100%;height:100%;background-color:#0074D9;">
 
-<?php session_start()
+<?php 
+// session_start();
+include("config.php");
 
-$username = $_POST['username'];
+$username = $_SESSION["Username"];
 
 $query1="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$username."'";
 $res1=mysqli_query($db,$query1);
 $res1=mysqli_fetch_assoc($res1);
-$sno=$res1["Class_Id"];
-
-$query1="SELECT `*` FROM `Assignments` WHERE `T_No`='".$sno."'";
+$sno=$res1["S.No."];
+echo $sno;
+$query1="SELECT * FROM `Assignments` WHERE `T_No`='".$sno."'";
 $res1=mysqli_query($db,$query1);
 while ($row = mysqli_fetch_assoc($res1))
 {
@@ -108,5 +110,3 @@ while ($row = mysqli_fetch_assoc($res1))
 </div>
 </body>
 </html>
-<<
-?>
