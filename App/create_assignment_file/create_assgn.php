@@ -37,5 +37,5 @@ include("encryption.php");
 	fwrite($file,$data);
 	fclose($file);
 	// echo "Submitted1";
-	redirect('../fillSolutions.php');
+	//redirect('../fillSolutions.php');
 ?>
