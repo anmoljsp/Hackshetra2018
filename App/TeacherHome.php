@@ -1,3 +1,19 @@
+<? php
+	session_start();
+	function redirect($url,$permanent=false)
+	{
+		if($permanent)
+		{
+			header('HTTP/1.1 301 Moved Permanently');
+		}
+		header('Location: '.$url);
+		exit();
+	}
+
+// if(!isset($_SESSION['Username'])){
+// 		redirect("index.php");
+// 	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,9 +77,12 @@ input{
       <br><br><br><br><br><br><br><br><br><br>
 </div>
 <div class="col-sm-1">
+<button 
       
     </div>
 </div>
 </div>
 </body>
 </html>
+<<
+?>
