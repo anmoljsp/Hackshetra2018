@@ -58,13 +58,13 @@ if(!isset($clCloud->loginToken) || !$clCloud->loginToken->validate()){
 
 try{
     // For more information about the optional headers please visit: https://api.copyleaks.com/GeneralDocumentation/RequestHeaders
-    $additionalHeaders = array($clConst['SANDBOX_MODE_HEADER']=TRUE, // Sandbox mode - Scan without consuming any credits and get back dummy results
+    $additionalHeaders = array(//$clConst['SANDBOX_MODE_HEADER']=TRUE, // Sandbox mode - Scan without consuming any credits and get back dummy results
                                 //$clConst['HTTP_CALLBACK'].': http://your.website.com/callbacks/', # For a fast testing of callbacks option we recommend to use http://requestb.in
                                 //$clConst['IN_PROGRESS_RESULT'].': http://your.website.com/callback/results/,
                                 //$clConst['EMAIL_CALLBACK'].': myemail@company.com',
                                 //$clConst['CLIENT_CUSTOM_PREFIX'].'name: some name'
                                 //$clConst['PARTIAL_SCAN_HEADER'],
-                                //$clConst['COMPARE_ONLY']=TRUE  # Compare files in between - available only on createByFiles
+                                $clConst['COMPARE_ONLY']=TRUE  # Compare files in between - available only on createByFiles
                                 //$clConst['IMPORT_FILE_TO_DATABASE'] # Import your file to our database only
                                 );
   
@@ -73,7 +73,7 @@ try{
     //$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
     //$process = $clCloud->createByFile($file, $additionalHeaders);
-    $processes = $clCloud->createByFiles(array("../PHP-Plagiarism-Checker-master/apj2.odt",                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
+    $processes = $clCloud->createByFiles(array($solution,                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
                                                               //                         the second([1]) is the error happend
     //$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
         //print_r($processes[0]);
