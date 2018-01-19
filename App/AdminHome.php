@@ -33,20 +33,8 @@ input{
   </style>
 </head>
 <body style="margin:0px;padding:0px;color:white;background-repeat:no repeat;width:100%;background-image: url('back.jpg');background-size: cover;">
-  <nav class="navbar navbar-default fixed">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-  </div>
-</nav>
 <div  class="container" style="margin:0px;padding:0px;width:100%;min-height:100%;">
+  <h2 style="text-align: center;font-size:300%;">Anonymous</h2>
   <br><br><br><br><br>
   <div class="row" style="min-height:100%vh;">
     <div class="col-sm-3">
