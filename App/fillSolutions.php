@@ -30,9 +30,9 @@ if(!isset($_SESSION['Username'])){
 			{
 //dependencies and autoload
 include_once( getcwd().'/autoload.php');
-// use Copyleaks\CopyleaksCloud;
-// use Copyleaks\CopyleaksProcess;
-// use Copyleaks\Products;
+use Copyleaks\CopyleaksCloud;
+use Copyleaks\CopyleaksProcess;
+use Copyleaks\Products;
 
 /* CREATE CONFIG INSTANCE */
 $config = new \ReflectionClass('Copyleaks\Config');
