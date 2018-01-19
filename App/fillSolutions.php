@@ -24,10 +24,7 @@ if(!isset($_SESSION['Username'])){
 	$class= $subject= "";
 	$Username=$_SESSION['Username'];
 	echo "hey";
-	if($_SERVER["REQUEST_METHOD"]=="POST")
-	{
-		if(isset($_POST['submit']))
-		{
+	
 			$class=$_SESSION["class"];
 			$subject=$_SESSION["subject"];
 			$assId=$_SESSION["AssID"];
@@ -178,9 +175,7 @@ function build_table($array){
 	    			echo("Error description: " . mysqli_error($db));
 	    		}
 
-			}
-
-		}
+			
 
 	}
 ?>
