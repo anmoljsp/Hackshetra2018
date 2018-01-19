@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("config.php");
 function redirect($url,$permanent=false)
 {
   if($permanent)
@@ -11,7 +12,17 @@ function redirect($url,$permanent=false)
 }
 if(isset($_SESSION["Username"]))
 {
-  redirect('UserHome.html');
+
+    $query="SELECT Account_Type FROM Acounts WHERE Username='".$_SESSION["Username"]."'";
+    $res=mysqli_query($db,$query);
+    $row=mysqli_fetch_array($res,MYSQLI_ASSOC);
+    $accType=$row["Account_Type"];
+    if($accType=="Student")
+      redirect('StudentHome.php');
+    else if($accType=="Teacher")
+      redirect('TeacherHome.php');
+    else if($accType=="Admin")
+      redirect("AdminHome.php");  
 }
 else
 {
