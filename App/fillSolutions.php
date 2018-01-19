@@ -23,14 +23,11 @@ if(!isset($_SESSION['Username'])){
 }
 	$class= $subject= "";
 	$Username=$_SESSION['Username'];
-	echo "hey";
 	
 			$class=$_SESSION["class"];
 			$subject=$_SESSION["subject"];
 			$assId=$_SESSION["AssID"];
 			$solution=$_SESSION["id"];
-			echo "Here it is";
-            echo $solution;
 			if($class != ""&&$subject != "")
 			{
 
@@ -61,13 +58,13 @@ if(!isset($clCloud->loginToken) || !$clCloud->loginToken->validate()){
 
 try{
     // For more information about the optional headers please visit: https://api.copyleaks.com/GeneralDocumentation/RequestHeaders
-    $additionalHeaders = array(//$clConst['SANDBOX_MODE_HEADER']=TRUE, // Sandbox mode - Scan without consuming any credits and get back dummy results
+    $additionalHeaders = array($clConst['SANDBOX_MODE_HEADER']=TRUE, // Sandbox mode - Scan without consuming any credits and get back dummy results
                                 //$clConst['HTTP_CALLBACK'].': http://your.website.com/callbacks/', # For a fast testing of callbacks option we recommend to use http://requestb.in
                                 //$clConst['IN_PROGRESS_RESULT'].': http://your.website.com/callback/results/,
                                 //$clConst['EMAIL_CALLBACK'].': myemail@company.com',
                                 //$clConst['CLIENT_CUSTOM_PREFIX'].'name: some name'
                                 //$clConst['PARTIAL_SCAN_HEADER'],
-                                $clConst['COMPARE_ONLY']=TRUE  # Compare files in between - available only on createByFiles
+                                //$clConst['COMPARE_ONLY']=TRUE  # Compare files in between - available only on createByFiles
                                 //$clConst['IMPORT_FILE_TO_DATABASE'] # Import your file to our database only
                                 );
   
@@ -82,9 +79,9 @@ try{
         //print_r($processes[0]);
     //print_r($processes[1]);
     $process = $processes[0][0];
-    echo "<BR/><strong>Process created!</strong> (PID = '" . $process->processId . "')";
+    // echo "<BR/><strong>Process created!</strong> (PID = '" . $process->processId . "')";
 
-    echo '<BR/><BR/><strong>Processing Started</strong>';
+    // echo '<BR/><BR/><strong>Processing Started</strong>';
 
     // Wait for the scan to complete
     while ($process->getStatus() != 100)
@@ -92,7 +89,7 @@ try{
         sleep(2);            
     }
 
-    echo '<BR/><BR/><strong>Finished Processing</strong>';
+   // echo '<BR/><BR/><strong>Finished Processing</strong>';
   
     echo "<BR/><BR/><strong>Results:</strong>";
     $results = $process->getResult();
@@ -101,12 +98,13 @@ try{
     $c=1;
     foreach ($results as $result) {
 $val_r= (array)$result;
+echo "<div class='row'><div class='col-sm-4'>"
 echo $c . ".---<br>";
 
 echo "Title" . $val_r["Title"]."<br>";
 
 echo "URL" . $val_r["URL"]."<br>";
-    echo "Percentage plagiarized" . $val_r["Percents"]."<br><br><br>"; 
+    echo "Percentage plagiarized" . $val_r["Percents"]."<br><br><br></div>"; 
     $c = $c +1;   }
 
   
@@ -151,8 +149,6 @@ function build_table($array){
 		    	$res1=mysqli_query($db,$query1);
 		    	$res1=mysqli_fetch_assoc($res1);
 		    	$class=$res1["Class_Id"];
-		    	echo "Here i am ";
-		    	echo $class;
 		    	$query2="SELECT `Subject_Id` FROM `Subjects` WHERE `Subject_Name`='".$subject."'";
 		    	$res2=mysqli_query($db,$query2);
 		    	$res2=mysqli_fetch_assoc($res2);
