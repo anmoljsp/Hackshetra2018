@@ -40,7 +40,7 @@ $apiKey = '76a6235f-b82a-4252-a6f5-896e73e4ee40';
 
 // Login to Copyleaks Cloud
 try{
-    $clCloud = new CopyleaksCloud($email, $apiKey, Products::Businesses);
+    $clCloud = new CopyleaksCloud($email, $apiKey, Products::Education);
 }catch(Exception $e){
     echo "<Br/>Failed to connect to Copyleaks Cloud with exception: ". $e->getMessage();
     die();
@@ -98,7 +98,7 @@ try{
     $c=1;
     foreach ($results as $result) {
 $val_r= (array)$result;
-echo "<div class='row'><div class='col-sm-4'>"
+echo "<div class='row'><div class='col-sm-4'>";
 echo $c . ".---<br>";
 
 echo "Title" . $val_r["Title"]."<br>";
