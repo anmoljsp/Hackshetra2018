@@ -14,8 +14,8 @@ include("encryption.php");
 		exit();
 	}
 
-	//$username = $_SESSION['Username'];
-	$username = "abhi";
+	$username = $_SESSION['Username'];
+	//$username = "abhi";
 	$class = $_POST['Class'];
 	$subject = $_POST['Subject'];
 	$file_name = $_POST['AssId'];
@@ -26,7 +26,12 @@ include("encryption.php");
 	// echo $data;
 
 	$id = $class."_".$file_name."_".$username;
-	echo $id;
+	//echo $id;
+	$_SESSION["id"] = $id;
+	$_SESSION["class"] = $class;
+	$_SESSION["subject"] = $subject;
+	$_SESSION["AssID"] = $file_name;
+	
 
 	$file = fopen($id,'a+');
 	fwrite($file,$data);

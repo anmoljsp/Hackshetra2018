@@ -28,10 +28,10 @@ if(!isset($_SESSION['Username'])){
 	{
 		if(isset($_POST['submit']))
 		{
-			$class=$_POST["Class"];
-			$subject=$_POST["Subject"];
-			$assId=$_POST["AssId"];
-			$solution=$_POST["Solution"];
+			$class=$_SESSION["class"];
+			$subject=$_SESSION["subject"];
+			$assId=$_SESSION["AssID"];
+			$solution=$_SESSION["id"];
 			echo "Here it is";
             echo $solution;
 			if($class != ""&&$subject != "")

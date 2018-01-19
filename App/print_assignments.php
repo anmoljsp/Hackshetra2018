@@ -17,7 +17,7 @@
 			$res=mysqli_query($db,$query);
 			$res1=mysqli_fetch_assoc($res);
 			$pass = $res1["Password"];
-			echo $pass;
+			//echo $pass;
 			echo mc_decrypt($pass,ENCRYPTION_KEY);
 			// $cnt=mysqli_num_rows($res);
 			// if($cnt>0)
