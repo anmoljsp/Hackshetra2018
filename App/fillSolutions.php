@@ -35,23 +35,10 @@ if(!isset($_SESSION['Username'])){
 			if($class != ""&&$subject != "")
 			{
 
-/* CREATE CONFIG INSTANCE */
 $config = new \ReflectionClass('Copyleaks\Config');
 $clConst = $config->getConstants();
 
-/*
-    CONSTRUCT ACCEPTS 3 PARAMETER (email, api_key, type of product).
 
-    AVAILABLE PRODUCTS:
-    1. Businesses - Products::Businesses - https://api.copyleaks.com/businessesdocumentation
-    2. Education - Products::Education - https://api.copyleaks.com/academicdocumentation
-    3. Websites - Products::Websites - https://api.copyleaks.com/websitesdocumentation
-
-*/
-
-// Use the email that you used to register to Copyleaks.
-// If you don't have an account yet register on https://copyleaks.com/account/register
-// Your API-KEY is available at the dashboards on https://api.copyleaks.com/. Choose the dashboard of the product that you would like to use.
 $email = 'piyushyadav2897@gmail.com';
 $apiKey = '76a6235f-b82a-4252-a6f5-896e73e4ee40';
 
@@ -123,35 +110,7 @@ echo "Title" + $val_r["Title"];
 echo "URL" + $val_r["URL"];
     echo "Percentage plagiarized" + $val_r["Percents"]; 
     $c = $c +1;   }
-    //echo $results[$cou];
-    //print_r($results[0]);
-    
-    //echo $results[$cou][1];
-    //echo $results[$cou]['Percents'];
-    // Get the source text, result text and the comparison report between them.
-    //echo "<BR/><BR/><strong>Cached Version:</strong> ".$process->getRawText()."<BR/>";
-    //echo "<BR/><strong>Result Raw Text:</strong> ".$clCloud->getResultRawText($results[0])."<BR/>";
-    //echo "<BR/><strong>Comparison Report:</strong><BR/>";
-    //print_r($clCloud->getResultComparisonReport($results[0]));
 
-    //DELETE process example
-    //echo '<Br/>delete process';
-    //$deletedProcess = $process->delete();
-    //print_r($deletedProcess);
-
-    //get processes list
-    //$process_list = $clCloud->getProcessList();
-    //print_r($process_list);
-  
-    //Get supported file types
-    //$supportedFileTypes = $clCloud->getSupportedFileTypes();
-    //echo "<BR/><BR/><strong>Supported File Types:</strong><BR/>";
-    //print_r($supportedFileTypes);
-  
-    //Get OCR's(Images of text) supported languages
-    //$ocrSupportedLanguages = $clCloud->getSupportedOCRLanguages();
-    //echo "<BR/><BR/><strong>Supported OCR(Images of text only) Languages:</strong><BR/>";
-    //print_r($ocrSupportedLanguages);
   
 }catch(Exception $e){
 
@@ -200,16 +159,16 @@ function build_table($array){
 		    	$res2=mysqli_query($db,$query2);
 		    	$res2=mysqli_fetch_assoc($res2);
 		    	$subject=$res2["Subject_Id"];
-		    	// $query3="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$Username."'";
-	      // 		$res3=mysqli_query($db,$query3);
-	      // 		$res3=mysqli_fetch_assoc($res3);
-	      		// $Std_Id=$res3["S.No."];
-	      		$Std_Id='16';
+		    	$query3="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$Username."'";
+	      		$res3=mysqli_query($db,$query3);
+	      		$res3=mysqli_fetch_assoc($res3);
+	      		$Std_Id=$res3["S.No."];
+	      		// $Std_Id='16';
 		    	$query4="INSERT INTO `Solutions`(Class_Id, Subject_Code,Ass_Id,Std_Id,Sol_Links) VALUES ('$class','$subject','$assId','$Std_Id','$solution')";
 		    	$res4=mysqli_query($db,$query4);
 		    	if($res4)
 		    	{
-		      		redirect('UserHome.html');
+		      		// redirect('UserHome.html');
 		      		// echo $password;
 
 		    	}

@@ -11,23 +11,39 @@
 		{
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			$password = mc_encrypt($password,ENCRYPTION_KEY);
-			if($username != ""&& $password != "")
+			$query="SELECT Password FROM Acounts WHERE Username='".$username."'";
+			$res=mysqli_query($db,$query);
+			$cnt=mysqli_num_rows($res);
+			if($cnt>0)
 			{
-		    	$query1="SELECT `S.No.` FROM `Acounts` WHERE `Username`='".$username."and Password ='".$password."'";
-		    	$res1=mysqli_query($db,$query1);
-		    	$res1=mysqli_fetch_assoc($res1);
-		    	$class=$res1["S.No."];
+				$row=mysqli_fetch_array($res,MYSQLI_ASSOC);
+				$test=$row["Password"];
+				// echo $test."<br>";
+				$passcrypt=mc_decrypt($row["Password"],ENCRYPTION_KEY);
+				// echo "Decrypted:" . mc_decrypt($test, ENCRYPTION_KEY)."<br>";
+				if($passcrypt==$password)
+				{
+					echo "Pass Match";
+					if($username != ""&& $password != "")
+					{
+				    	$class=$row["S.No."];
 
-		    	$query2="SELECT `Ass.No` FROM `Assignments` WHERE `Class_Id`='".$class."'";
-		    	$res2=mysqli_query($db,$query2);
-		    	$res2=mysqli_fetch_assoc($res2);
-		    	$Ass_no=$res2["Ass.No"];
+				    	$query2="SELECT `Ass.No` FROM `Assignments` WHERE `Class_Id`='".$class."'";
+				    	$res2=mysqli_query($db,$query2);
+				    	$res2=mysqli_fetch_assoc($res2);
+				    	$cnt2=mysqli_num_rows($res2);
+				    	while($cnt2 >=0 )
+				    	{
+				    		$Ass_no=$res2["Ass.No"];
+				    		echo $Ass_no." ";
+				    		$cnt2--;
+				    	}
+				    	$cnt-- ;
+				    }
 
+				}
 			}
-
 		}
-
 	}
 
 ?>
