@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Anonymous</title>
+  <title>Anonymous</title>
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,8 +33,19 @@ input{
   </style>
 </head>
 <body style="margin:0px;padding:0px;color:white;background-repeat:no repeat;width:100%;background-image: url('back.jpg');background-size: cover;">
+  <nav class="navbar navbar-default fixed">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Anonymous</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="../Editor/NicEdit.html">New Assignment</a></li>
+      <li><a href="logout.php">Logout</a></li>
+    </ul>
+  </div>
+</nav>
 <div  class="container" style="margin:0px;padding:0px;width:100%;min-height:100%;">
-  <h2 style="text-align: center;font-size:300%;">Anonymous</h2>
   <br><br><br><br><br>
   <div class="row" style="min-height:100%vh;">
     <div class="col-sm-3">

@@ -28,6 +28,7 @@ if(!isset($_SESSION['Username'])){
 			$subject=$_SESSION["subject"];
 			$assId=$_SESSION["AssID"];
 			$solution=$_SESSION["id"];
+            //$solution = "IT-1_Assign1943_abhi";
 			if($class != ""&&$subject != "")
 			{
 
@@ -73,7 +74,7 @@ try{
     //$process  = $clCloud->createByURL("https://www.copyleaks.com", $additionalHeaders);
     // $process  = $clCloud->createByText('<ENTER YOUR STRING HERE>');
     //$process = $clCloud->createByFile($file, $additionalHeaders);
-    $processes = $clCloud->createByFiles(array($solution,                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
+    $processes = $clCloud->createByFiles(array('./create_assignment_file/'.$solution,                                                 "../PHP-Plagiarism-Checker-master/apj2.odt"),$additionalHeaders); // Array with 2 elements - the first([0]) is the successfully created processes
                                                               //                         the second([1]) is the error happend
     //$process  = $clCloud->createByOCR(imagePath,'English',$additionalHeaders);
         //print_r($processes[0]);
